@@ -72,3 +72,23 @@ SELECT * FROM PERSONEL,BOLUM WHERE PERSONEL.BOL_NO = BOLUM.BOLUM_NO--HEM PERSONE
 SELECT AD,SOYAD,BOLUM_AD FROM PERSONEL,BOLUM WHERE PERSONEL.BOL_NO = BOLUM.BOLUM_NO--HEM PERSONEL HEM BOLUM TABLOLARINI BOLUM_NO LARI AYNI OLANLARIN AD, SOYAD, BOLUM_AD DEGERLERINI YAZAR--
 
 SELECT A.SICIL,A.AD, A.SOYAD, B.AD, B.SOYAD, B.DOG_TAR FROM PERSONEL AS A, PERSONEL AS B WHERE B.SOSY_GUV_NO=A.YON_SOS_GUV_NO --KIMIN KIMIN YONETICISI OLDUGUNU YAZAR--
+select concat(yazar_ad, ' ', yazar_soyad)as tamisim from kitap;--concat stringleri birleştirme fonksiyonu
+select concat_ws('-', kitap_ismi, yazar_ad,yazar_soyad)as ornek from kitap;
+select substring(kitap_ismi,1,4)as ornek from kitap;
+select concat(substring(kitap_ismi,1,4),'...')as ornek from kitap;
+select SUBSTRING('Merhaba Dünya',9,10)
+select 2*2;
+select REPLACE('Merhaba Dünya','Mer','456');
+select replace('peynir ekmek çay', ' ','&');
+select REVERSE('Ferhat');
+select concat(yazar_ad,' ',reverse(yazar_soyad))from kitap;
+select concat(yazar_ad,'uzunluğu ',datalength(yazar_ad),'dir') as ornek from kitap;
+select concat('Benim favori meyvem elma', UPPER(kitap_ismi),'dir.') as ornek from kitap;
+select UPPER(concat(yazar_ad,'',yazar_soyad))as tamisim from kitap;
+select yazar_ad,yazar_soyad from kitap order by yazar_ad;
+select yazar_ad,yazar_soyad from kitap order by 1; -- yazar_ad a göre sıralar
+select yazar_ad,yazar_soyad from kitap order by 2 asc; -- yazar_soyad a göre sıralar
+select yazar_ad,yazar_soyad from kitap order by 3; -- olmadığı için hata
+select concat(substring(kitap_ismi,1,5),'...')as kısa_isim,concat(yazar_soyad,',',substring(yazar_ad,1,1),'.')as yazar_ismi,stok_miktari as stok from kitap;
+update kitap set yazar_ad='ferhat' where yazar_ad='victor';
+delete from kitap where yazar_ad='silinecek isim';
