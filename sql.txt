@@ -73,6 +73,10 @@ SELECT AD,SOYAD,BOLUM_AD FROM PERSONEL,BOLUM WHERE PERSONEL.BOL_NO = BOLUM.BOLUM
 
 SELECT A.SICIL,A.AD, A.SOYAD, B.AD, B.SOYAD, B.DOG_TAR FROM PERSONEL AS A, PERSONEL AS B WHERE B.SOSY_GUV_NO=A.YON_SOS_GUV_NO --KIMIN KIMIN YONETICISI OLDUGUNU YAZAR--
 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+|              *********************                                  yeni veritabanı                                    ************************             |
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 SELECT CONCAT(YAZAR_AD, ' ', YAZAR_SOYAD)AS TAMISIM FROM KITAP;--CONCAT STRINGLERI BIRLEŞTIRME FONKSIYONU
 
 SELECT CONCAT_WS('-', KITAP_ISMI, YAZAR_AD,YAZAR_SOYAD)AS ORNEK FROM KITAP; --birleştirilecek kelimelerin arasına '-' işareti koyar--
